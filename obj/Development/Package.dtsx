@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/25/2023 12:46:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JCSOLANO-MOBL"
+  DTS:CreatorName="AMR\jcsolano"
+  DTS:DTSID="{CB4A76C5-CE1C-4F09-AA5A-1535E8F1B8B7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{2DB95775-20CB-436D-A3E4-856C30C11BB4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{71FDF2B1-04C3-47FF-8FD6-26A781FB058E}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jcsolano\Downloads\SnOP Cost Per Unit_FE Wafer_SortUPIMap (1).xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[svddev.intel.com,3181.SVD]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{05A43E64-7E6A-4F54-BE6B-960C0D5CF63F}"
+      DTS:ObjectName="svddev.intel.com,3181.SVD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=svddev.intel.com,3181;Initial Catalog=SVD;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CostPrice"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{651B9B1D-8035-49BB-B939-B75A73C1C4A2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CostPrice">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CostPrice\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1ACC5404-D213-4DE4-A6FF-A0EECE002B04}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{05A43E64-7E6A-4F54-BE6B-960C0D5CF63F}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE SOP.stgCostPrice;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CostPrice\ProdCo Cost"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E7AAD794-0885-40AF-82F5-A99D8E7BFCA7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ProdCo Cost"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\CostPrice\ProdCo Cost\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\CostPrice\ProdCo Cost\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\CostPrice\ProdCo Cost\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]"
+                          name="KeyFigureId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">37</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">37</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\CostPrice\ProdCo Cost\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CostPrice\ProdCo Cost\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">'ProdCo Cost Per Unit$'</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CostPrice\ProdCo Cost\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          name="YEAR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
+                          name="Qtr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[ProdCo Cost Per Unit]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProdCo Cost Per Unit]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[ProdCo Cost Per Unit]"
+                          name="ProdCo Cost Per Unit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          name="Clean Item ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Supply Product Identifier]"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          name="Sales And Operations Planning Supply Product Identifier"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          dataType="r8"
+                          name="YEAR" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
+                          dataType="r8"
+                          name="Qtr" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          length="255"
+                          name="fg_cost_grp_nm" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProdCo Cost Per Unit]"
+                          dataType="cy"
+                          name="ProdCo Cost Per Unit" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
+                          dataType="wstr"
+                          length="255"
+                          name="Clean Item ID" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Supply Product Identifier]"
+                          dataType="wstr"
+                          length="255"
+                          name="Sales And Operations Planning Supply Product Identifier" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
+                          dataType="r8"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
+                          name="YEAR" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
+                          dataType="r8"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
+                          name="Qtr" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ProdCo Cost Per Unit]"
+                          dataType="cy"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ProdCo Cost Per Unit]"
+                          name="ProdCo Cost Per Unit" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
+                          name="Clean Item ID" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          name="Sales And Operations Planning Supply Product Identifier" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\CostPrice\ProdCo Cost\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[sop].[stgCostPrice]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[svddev.intel.com,3181.SVD]"
+                      connectionManagerRefId="Package.ConnectionManagers[svddev.intel.com,3181.SVD]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KeyFigureId]"
+                          cachedDataType="i4"
+                          cachedName="KeyFigureId"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR]"
+                          cachedDataType="r8"
+                          cachedName="YEAR"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YearNbr]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtr]"
+                          cachedDataType="r8"
+                          cachedName="Qtr"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Clean Item ID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Clean Item ID"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Sales And Operations Planning Supply Product Identifier"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Supply Product Identifier]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fg_cost_grp_nm]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="fg_cost_grp_nm"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProdCo Cost Per Unit]"
+                          cachedDataType="cy"
+                          cachedName="ProdCo Cost Per Unit"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[ProdCo Cost Per Unit]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
+                          dataType="i4"
+                          name="KeyFigureId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YearNbr]"
+                          dataType="i4"
+                          name="YearNbr" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
+                          dataType="i4"
+                          name="QtrNbr" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ItemId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
+                          dataType="wstr"
+                          length="500"
+                          name="CostGroup" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
+                          dataType="r8"
+                          name="KeyFigureValue" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\CostPrice\ProdCo Cost.Paths[Derived Column Output]"
+                  endId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\CostPrice\ProdCo Cost.Paths[Excel Source Output]"
+                  endId="Package\CostPrice\ProdCo Cost\Derived Column.Inputs[Derived Column Input]"
+                  name="Excel Source Output"
+                  startId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F6322A8F-864B-4FDE-9B9C-085F2BAEDE26}"
+          DTS:From="Package\CostPrice\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\CostPrice\ProdCo Cost" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\CostPrice\ProdCo Cost"
+          TopLeft="54.6285763915706,110.494120778675" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\CostPrice\Execute SQL Task"
+          TopLeft="43.9142904948216,28.7647073516384" />
+        <EdgeLayout
+          Id="Package\CostPrice.PrecedenceConstraints[Constraint]"
+          TopLeft="123.871433443196,70.3647073516384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.1294134270362"
+              Start="0,0"
+              End="0,32.6294134270362">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.6294134270362" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="255.2,207.2"
+          Size="255.2,250.4"
+          Id="Package\CostPrice"
+          TopLeft="237.142861181376,69.5882362700664" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CostPrice\ProdCo Cost">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\CostPrice\ProdCo Cost\Excel Source"
+          TopLeft="351.428577413365,82.5882364523865" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\CostPrice\ProdCo Cost\Derived Column"
+          TopLeft="346.428577328215,158.294119867074" />
+        <EdgeLayout
+          Id="Package\CostPrice\ProdCo Cost.Paths[Excel Source Output]"
+          TopLeft="421.72857737079,124.188236452386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1058834146876"
+              Start="0,0"
+              End="0,26.6058834146876">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6058834146876" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\CostPrice\ProdCo Cost\OLE DB Destination"
+          TopLeft="341.428577243066,240.694120596354" />
+        <EdgeLayout
+          Id="Package\CostPrice\ProdCo Cost.Paths[Derived Column Output]"
+          TopLeft="424.72857728564,199.894119867074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.8000007292804"
+              Start="0,0"
+              End="0,33.3000007292804">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3000007292804" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CostPrice\ProdCo Cost\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CostPrice\ProdCo Cost\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
