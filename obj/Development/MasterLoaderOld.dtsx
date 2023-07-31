@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/25/2023 12:46:07 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="JCSOLANO-MOBL"
   DTS:CreatorName="AMR\jcsolano"
-  DTS:DTSID="{CB4A76C5-CE1C-4F09-AA5A-1535E8F1B8B7}"
+  DTS:DTSID="{3033D1A5-06B5-4A22-95DC-0CF7FB4D122C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="MasterLoaderOld"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{64666B13-16F5-4441-9DA2-B0E4426B890F}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{30DAEE30-6293-4111-953D-DB1A19C5E5B3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{71FDF2B1-04C3-47FF-8FD6-26A781FB058E}"
+      DTS:DTSID="{DB013FBD-E1AF-4B2F-A555-1D232963C8FC}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -29,21 +29,9 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{A7F9CA71-021E-4BDD-91F8-EE7D898298A7}"
-      DTS:ObjectName="Excel Connection Manager 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jcsolano\Downloads\SortUpi.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[svddev.intel.com,3181.SVD]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{05A43E64-7E6A-4F54-BE6B-960C0D5CF63F}"
+      DTS:DTSID="{4C25E688-0584-47E4-A920-D8C7B7049272}"
       DTS:ObjectName="svddev.intel.com,3181.SVD">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -53,59 +41,13 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{220D5200-6D2B-4CE0-9F4F-9F530D935460}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="FGCost">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{DCB41BFD-4550-4D6C-ACAF-AEF36CEB6C29}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="FGPrice">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{77DDB5FE-9D7B-4666-8563-5C3AFD85074E}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="ProdCoCost">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{B4B94155-7B2E-42EC-BC0A-369330A7E3B1}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="WaferCost">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{5339E5B3-30DD-479E-9189-CB7EF97CA248}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="WaferPrice">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-  </DTS:Variables>
+  <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\CostPrice"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{651B9B1D-8035-49BB-B939-B75A73C1C4A2}"
+      DTS:DTSID="{04640F9C-A7BE-4472-8A3C-38E7137E9669}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="CostPrice">
@@ -115,7 +57,7 @@
           DTS:refId="Package\CostPrice\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1ACC5404-D213-4DE4-A6FF-A0EECE002B04}"
+          DTS:DTSID="{9410474B-A081-462B-9472-2AC318D47AAC}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
@@ -124,7 +66,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{05A43E64-7E6A-4F54-BE6B-960C0D5CF63F}"
+              SQLTask:Connection="{4C25E688-0584-47E4-A920-D8C7B7049272}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE SOP.stgCostPrice;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -132,7 +74,7 @@
           DTS:refId="Package\CostPrice\FG Cost"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{dfbdac58-e467-4a4e-a89f-a1fd9ee5df71}"
+          DTS:DTSID="{86D4620E-5126-4CD5-BDF4-62290B553E70}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="FG Cost"
@@ -178,13 +120,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">@[User::FGCost]</property>
+                              name="Expression">47</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[User::FGCost]</property>
+                              name="FriendlyExpression">47</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -259,8 +201,8 @@
                   <connections>
                     <connection
                       refId="Package\CostPrice\FG Cost\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -279,51 +221,93 @@
                           name="Qtr"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          name="Year"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          name="YEAR"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
                           length="255"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
-                          name="cost_grp_nm"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Unit_Front_End]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[TMGf Rev Per Unit_Front_End]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Unit_Front_End]"
-                          name="TMGf Rev Per Unit_Front_End"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SnoPDemandProductId]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]"
-                          name="SnoPDemandProductId"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[LRP or POR Supergroup]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SupplyProductId]"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[LRP or POR Supergroup]"
                           length="255"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]"
-                          name="SupplyProductId"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[LRP or POR Supergroup]"
+                          name="LRP or POR Supergroup"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Long Range Planning Assembly Item Identifier]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Long Range Planning Assembly Item Identifier]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Long Range Planning Assembly Item Identifier]"
+                          name="Long Range Planning Assembly Item Identifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Demand Product Identifier]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          name="Sales And Operations Planning Demand Product Identifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Profit Center]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Profit Center]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Profit Center]"
+                          name="Profit Center"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Fallout (Ken's File)]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fallout (Ken's File)]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Fallout (Ken's File)]"
+                          name="Fallout (Ken's File)"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Demand Product from SDRA Hierarchy]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Demand Product from SDRA Hierarchy]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Demand Product from SDRA Hierarchy]"
+                          name="Demand Product from SDRA Hierarchy"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[TMGf Cost Per Unit_Front_End]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[TMGf Cost Per Unit_Front_End]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[TMGf Cost Per Unit_Front_End]"
+                          name="TMGf Cost Per Unit_Front_End"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -333,28 +317,48 @@
                           dataType="r8"
                           name="Qtr" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
                           dataType="r8"
-                          name="Year" />
+                          name="YEAR" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
                           dataType="wstr"
                           length="255"
-                          name="cost_grp_nm" />
+                          name="fg_cost_grp_nm" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[TMGf Rev Per Unit_Front_End]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[LRP or POR Supergroup]"
+                          dataType="wstr"
+                          length="255"
+                          name="LRP or POR Supergroup" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Long Range Planning Assembly Item Identifier]"
+                          dataType="wstr"
+                          length="255"
+                          name="Long Range Planning Assembly Item Identifier" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Demand Product Identifier]"
+                          dataType="wstr"
+                          length="255"
+                          name="Sales And Operations Planning Demand Product Identifier" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Profit Center]"
+                          dataType="wstr"
+                          length="255"
+                          name="Profit Center" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fallout (Ken's File)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Fallout (Ken's File)" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Demand Product from SDRA Hierarchy]"
+                          dataType="wstr"
+                          length="255"
+                          name="Demand Product from SDRA Hierarchy" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[TMGf Cost Per Unit_Front_End]"
                           dataType="r8"
-                          name="TMGf Rev Per Unit_Front_End" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SnoPDemandProductId]"
-                          dataType="wstr"
-                          length="255"
-                          name="SnoPDemandProductId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SupplyProductId]"
-                          dataType="wstr"
-                          length="255"
-                          name="SupplyProductId" />
+                          name="TMGf Cost Per Unit_Front_End" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -363,38 +367,62 @@
                       name="Excel Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
                           dataType="r8"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
-                          name="Year" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
+                          name="YEAR" />
                         <outputColumn
                           refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
                           dataType="r8"
                           lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
                           name="Qtr" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
-                          name="cost_grp_nm" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Rev Per Unit_Front_End]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Cost Per Unit_Front_End]"
                           dataType="r8"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Rev Per Unit_Front_End]"
-                          name="TMGf Rev Per Unit_Front_End" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Cost Per Unit_Front_End]"
+                          name="TMGf Cost Per Unit_Front_End" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SnoPDemandProductId]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[LRP or POR Supergroup]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SnoPDemandProductId]"
-                          name="SnoPDemandProductId" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[LRP or POR Supergroup]"
+                          name="LRP or POR Supergroup" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Long Range Planning Assembly Item Identifier]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SupplyProductId]"
-                          name="SupplyProductId" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Long Range Planning Assembly Item Identifier]"
+                          name="Long Range Planning Assembly Item Identifier" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          name="Sales And Operations Planning Demand Product Identifier" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Profit Center]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Profit Center]"
+                          name="Profit Center" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Fallout (Ken's File)]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Fallout (Ken's File)]"
+                          name="Fallout (Ken's File)" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Demand Product from SDRA Hierarchy]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Demand Product from SDRA Hierarchy]"
+                          name="Demand Product from SDRA Hierarchy" />
                         <outputColumn
                           refId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -491,11 +519,11 @@
                           externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
                           lineageId="Package\CostPrice\FG Cost\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]" />
                         <inputColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR]"
                           cachedDataType="r8"
-                          cachedName="Year"
+                          cachedName="YEAR"
                           externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YearNbr]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]" />
                         <inputColumn
                           refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtr]"
                           cachedDataType="r8"
@@ -503,31 +531,33 @@
                           externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
                           lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]" />
                         <inputColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Long Range Planning Assembly Item Identifier]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="cost_grp_nm"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]" />
-                        <inputColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TMGf Rev Per Unit_Front_End]"
-                          cachedDataType="r8"
-                          cachedName="TMGf Rev Per Unit_Front_End"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Unit_Front_End]" />
-                        <inputColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SnoPDemandProductId]"
-                          cachedDataType="r8"
-                          cachedName="SnoPDemandProductId"
+                          cachedName="Long Range Planning Assembly Item Identifier"
                           externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]" />
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Long Range Planning Assembly Item Identifier]" />
                         <inputColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Demand Product from SDRA Hierarchy]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="SupplyProductId"
-                          externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]" />
+                          cachedName="Demand Product from SDRA Hierarchy"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[Demand Product from SDRA Hierarchy]" />
+                        <inputColumn
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fg_cost_grp_nm]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="fg_cost_grp_nm"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]" />
+                        <inputColumn
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TMGf Cost Per Unit_Front_End]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="TMGf Cost Per Unit_Front_End"
+                          externalMetadataColumnId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
+                          lineageId="Package\CostPrice\FG Cost\Excel Source.Outputs[Excel Source Output].Columns[TMGf Cost Per Unit_Front_End]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -544,9 +574,15 @@
                           dataType="i4"
                           name="QtrNbr" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonth]"
-                          dataType="i4"
-                          name="PlanningMonth" />
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ItemId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductId" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
                           dataType="wstr"
@@ -556,25 +592,6 @@
                           refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           dataType="r8"
                           name="KeyFigureValue" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          dataType="wstr"
-                          length="100"
-                          name="ItemId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          dataType="i4"
-                          name="SupplyProductId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedOn]"
-                          dataType="dbTimeStamp"
-                          name="CreatedOn" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
-                          codePage="1252"
-                          dataType="str"
-                          length="25"
-                          name="CreatedBy" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -623,7 +640,7 @@
           DTS:refId="Package\CostPrice\FG Price"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{0f32e289-a38f-41b8-9210-3ca3ae6cb899}"
+          DTS:DTSID="{04D3DB27-4B38-4DF5-8403-092AA42C19EE}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="FG Price"
@@ -669,13 +686,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">@[User::FGPrice]</property>
+                              name="Expression">38</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[User::FGPrice]</property>
+                              name="FriendlyExpression">38</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -750,8 +767,8 @@
                   <connections>
                     <connection
                       refId="Package\CostPrice\FG Price\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -761,6 +778,16 @@
                       name="Excel Source Output">
                       <outputColumns>
                         <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Explanation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Explanation]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Explanation]"
+                          name="Explanation"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
@@ -768,6 +795,25 @@
                           externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
                           lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
                           name="Qtr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          name="YEAR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Unit_Back_End]"
@@ -779,73 +825,120 @@
                           name="TMGf Rev Per Unit_Back_End"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          name="Year"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[LRP or POR Supergroup]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[LRP or POR Supergroup]"
                           length="255"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
-                          name="cost_grp_nm"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[LRP or POR Supergroup]"
+                          name="LRP or POR Supergroup"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SnoPDemandProductId]"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]"
-                          name="SnoPDemandProductId"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Long Range Planning Assembly Item Identifier]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SupplyProductId]"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Long Range Planning Assembly Item Identifier]"
                           length="255"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]"
-                          name="SupplyProductId"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Long Range Planning Assembly Item Identifier]"
+                          name="Long Range Planning Assembly Item Identifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Demand Product Identifier]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          name="Sales And Operations Planning Demand Product Identifier"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Profit Center]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Profit Center]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Profit Center]"
+                          name="Profit Center"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Fallout (Ken's File)]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fallout (Ken's File)]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Fallout (Ken's File)]"
+                          name="Fallout (Ken's File)"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Demand Product from SDRA Hierarchy]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Demand Product from SDRA Hierarchy]"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Demand Product from SDRA Hierarchy]"
+                          name="Demand Product from SDRA Hierarchy"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Explanation]"
+                          dataType="wstr"
+                          length="255"
+                          name="Explanation" />
+                        <externalMetadataColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
                           dataType="r8"
                           name="Qtr" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          dataType="r8"
+                          name="YEAR" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          length="255"
+                          name="fg_cost_grp_nm" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[TMGf Rev Per Unit_Back_End]"
                           dataType="r8"
                           name="TMGf Rev Per Unit_Back_End" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          dataType="r8"
-                          name="Year" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[LRP or POR Supergroup]"
                           dataType="wstr"
                           length="255"
-                          name="cost_grp_nm" />
+                          name="LRP or POR Supergroup" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SnoPDemandProductId]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Long Range Planning Assembly Item Identifier]"
                           dataType="wstr"
                           length="255"
-                          name="SnoPDemandProductId" />
+                          name="Long Range Planning Assembly Item Identifier" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SupplyProductId]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Demand Product Identifier]"
                           dataType="wstr"
                           length="255"
-                          name="SupplyProductId" />
+                          name="Sales And Operations Planning Demand Product Identifier" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Profit Center]"
+                          dataType="wstr"
+                          length="255"
+                          name="Profit Center" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fallout (Ken's File)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Fallout (Ken's File)" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Demand Product from SDRA Hierarchy]"
+                          dataType="wstr"
+                          length="255"
+                          name="Demand Product from SDRA Hierarchy" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -854,38 +947,68 @@
                       name="Excel Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
                           dataType="r8"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
-                          name="Year" />
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
+                          name="YEAR" />
                         <outputColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
                           dataType="r8"
                           lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
                           name="Qtr" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
-                          name="cost_grp_nm" />
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm" />
                         <outputColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Rev Per Unit_Back_End]"
                           dataType="r8"
                           lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Rev Per Unit_Back_End]"
                           name="TMGf Rev Per Unit_Back_End" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[SnoPDemandProductId]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[LRP or POR Supergroup]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[SnoPDemandProductId]"
-                          name="SnoPDemandProductId" />
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[LRP or POR Supergroup]"
+                          name="LRP or POR Supergroup" />
                         <outputColumn
-                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Long Range Planning Assembly Item Identifier]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[SupplyProductId]"
-                          name="SupplyProductId" />
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Long Range Planning Assembly Item Identifier]"
+                          name="Long Range Planning Assembly Item Identifier" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Demand Product Identifier]"
+                          name="Sales And Operations Planning Demand Product Identifier" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Profit Center]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Profit Center]"
+                          name="Profit Center" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Fallout (Ken's File)]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Fallout (Ken's File)]"
+                          name="Fallout (Ken's File)" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Explanation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Explanation]"
+                          name="Explanation" />
+                        <outputColumn
+                          refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Demand Product from SDRA Hierarchy]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[Demand Product from SDRA Hierarchy]"
+                          name="Demand Product from SDRA Hierarchy" />
                         <outputColumn
                           refId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -982,11 +1105,11 @@
                           externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
                           lineageId="Package\CostPrice\FG Price\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]" />
                         <inputColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR]"
                           cachedDataType="r8"
-                          cachedName="Year"
+                          cachedName="YEAR"
                           externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YearNbr]"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Year]" />
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[YEAR]" />
                         <inputColumn
                           refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtr]"
                           cachedDataType="r8"
@@ -994,31 +1117,32 @@
                           externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
                           lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Qtr]" />
                         <inputColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Long Range Planning Assembly Item Identifier]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="cost_grp_nm"
+                          cachedName="Long Range Planning Assembly Item Identifier"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Long Range Planning Assembly Item Identifier]" />
+                        <inputColumn
+                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Demand Product from SDRA Hierarchy]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Demand Product from SDRA Hierarchy"
+                          externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[Demand Product from SDRA Hierarchy]" />
+                        <inputColumn
+                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fg_cost_grp_nm]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="fg_cost_grp_nm"
                           externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]" />
+                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]" />
                         <inputColumn
                           refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TMGf Rev Per Unit_Back_End]"
                           cachedDataType="r8"
                           cachedName="TMGf Rev Per Unit_Back_End"
                           externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Unit_Back_End]" />
-                        <inputColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SnoPDemandProductId]"
-                          cachedDataType="r8"
-                          cachedName="SnoPDemandProductId"
-                          externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]" />
-                        <inputColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplyProductId]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="SupplyProductId"
-                          externalMetadataColumnId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          lineageId="Package\CostPrice\FG Price\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1035,9 +1159,15 @@
                           dataType="i4"
                           name="QtrNbr" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonth]"
-                          dataType="i4"
-                          name="PlanningMonth" />
+                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ItemId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductId" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
                           dataType="wstr"
@@ -1047,25 +1177,6 @@
                           refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           dataType="r8"
                           name="KeyFigureValue" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          dataType="wstr"
-                          length="100"
-                          name="ItemId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          dataType="i4"
-                          name="SupplyProductId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedOn]"
-                          dataType="dbTimeStamp"
-                          name="CreatedOn" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\FG Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
-                          codePage="1252"
-                          dataType="str"
-                          length="25"
-                          name="CreatedBy" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1111,44 +1222,10 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\CostPrice\Get Key Figures IDs"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0F62FC68-DECC-467E-8C06-E3302C9FFC15}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get Key Figures IDs"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{05A43E64-7E6A-4F54-BE6B-960C0D5CF63F}"
-              SQLTask:SqlStatementSource="SELECT * FROM (&#xA;&#x9;SELECT KEYFIGURENM, KEYFIGUREID FROM SOP.KEYFIGURE WHERE KEYFIGURENM IN (&#xA;&#x9;'ProdCo Cost',&#xA;&#x9;'FG Price',&#xA;&#x9;'Wafer Price',&#xA;&#x9;'FG Cost',&#xA;&#x9;'Wafer Cost'&#xA;&#x9;)&#xA;) AS KF&#xA;pivot&#xA;(&#xA;  max(KEYFIGUREID)&#xA;  for KEYFIGURENM in (&#x9;&#xA;&#x9;&#x9;&quot;ProdCo Cost&quot;,&#xA;&#x9;&#x9;&quot;FG Price&quot;,&#xA;&#x9;&#x9;&quot;Wafer Price&quot;,&#xA;&#x9;&#x9;&quot;FG Cost&quot;,&#xA;&#x9;&#x9;&quot;Wafer Cost&quot;&#xA;&#x9;)&#xA;) piv;"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::ProdCoCost" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="1"
-                SQLTask:DtsVariableName="User::FGPrice" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="2"
-                SQLTask:DtsVariableName="User::WaferPrice" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="3"
-                SQLTask:DtsVariableName="User::FGCost" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="4"
-                SQLTask:DtsVariableName="User::WaferCost" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\CostPrice\ProdCo Cost"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E7AAD794-0885-40AF-82F5-A99D8E7BFCA7}"
+          DTS:DTSID="{7AB85F23-3588-495F-9988-B3843B9CD43F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="ProdCo Cost"
@@ -1194,13 +1271,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">@[User::ProdCoCost]</property>
+                              name="Expression">37</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[User::ProdCoCost]</property>
+                              name="FriendlyExpression">37</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -1275,8 +1352,8 @@
                   <connections>
                     <connection
                       refId="Package\CostPrice\ProdCo Cost\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1286,6 +1363,15 @@
                       name="Excel Source Output">
                       <outputColumns>
                         <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]"
+                          name="YEAR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
@@ -1293,6 +1379,16 @@
                           externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
                           lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
                           name="Qtr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
+                          length="255"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[ProdCo Cost Per Unit]"
@@ -1304,73 +1400,55 @@
                           name="ProdCo Cost Per Unit"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          name="Year"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
                           length="255"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
-                          name="cost_grp_nm"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          name="Clean Item ID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SnoPDemandProductId]"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]"
-                          name="SnoPDemandProductId"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Supply Product Identifier]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SupplyProductId]"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Supply Product Identifier]"
                           length="255"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]"
-                          name="SupplyProductId"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          name="Sales And Operations Planning Supply Product Identifier"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[YEAR]"
+                          dataType="r8"
+                          name="YEAR" />
+                        <externalMetadataColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
                           dataType="r8"
                           name="Qtr" />
                         <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fg_cost_grp_nm]"
+                          dataType="wstr"
+                          length="255"
+                          name="fg_cost_grp_nm" />
+                        <externalMetadataColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProdCo Cost Per Unit]"
-                          dataType="r8"
+                          dataType="cy"
                           name="ProdCo Cost Per Unit" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          dataType="r8"
-                          name="Year" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
                           dataType="wstr"
                           length="255"
-                          name="cost_grp_nm" />
+                          name="Clean Item ID" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SnoPDemandProductId]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Sales And Operations Planning Supply Product Identifier]"
                           dataType="wstr"
                           length="255"
-                          name="SnoPDemandProductId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SupplyProductId]"
-                          dataType="wstr"
-                          length="255"
-                          name="SupplyProductId" />
+                          name="Sales And Operations Planning Supply Product Identifier" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1379,38 +1457,38 @@
                       name="Excel Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
                           dataType="r8"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
-                          name="Year" />
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[YEAR]"
+                          name="YEAR" />
                         <outputColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
                           dataType="r8"
                           lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
                           name="Qtr" />
                         <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
-                          name="cost_grp_nm" />
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fg_cost_grp_nm]"
+                          name="fg_cost_grp_nm" />
                         <outputColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ProdCo Cost Per Unit]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ProdCo Cost Per Unit]"
                           name="ProdCo Cost Per Unit" />
                         <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SnoPDemandProductId]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SnoPDemandProductId]"
-                          name="SnoPDemandProductId" />
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
+                          name="Clean Item ID" />
                         <outputColumn
-                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SupplyProductId]"
+                          refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Supply Product Identifier]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SupplyProductId]"
-                          name="SupplyProductId" />
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          name="Sales And Operations Planning Supply Product Identifier" />
                         <outputColumn
                           refId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1466,7 +1544,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1478,7 +1556,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1507,11 +1585,11 @@
                           externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
                           lineageId="Package\CostPrice\ProdCo Cost\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]" />
                         <inputColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR]"
                           cachedDataType="r8"
-                          cachedName="Year"
+                          cachedName="YEAR"
                           externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YearNbr]"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]" />
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[YEAR]" />
                         <inputColumn
                           refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtr]"
                           cachedDataType="r8"
@@ -1519,31 +1597,32 @@
                           externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
                           lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]" />
                         <inputColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cost_grp_nm]"
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Clean Item ID]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="cost_grp_nm"
+                          cachedName="Clean Item ID"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sales And Operations Planning Supply Product Identifier]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Sales And Operations Planning Supply Product Identifier"
+                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[Sales And Operations Planning Supply Product Identifier]" />
+                        <inputColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fg_cost_grp_nm]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="fg_cost_grp_nm"
                           externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]" />
+                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[fg_cost_grp_nm]" />
                         <inputColumn
                           refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProdCo Cost Per Unit]"
                           cachedDataType="cy"
                           cachedName="ProdCo Cost Per Unit"
                           externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[ProdCo Cost Per Unit]" />
-                        <inputColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SnoPDemandProductId]"
-                          cachedDataType="r8"
-                          cachedName="SnoPDemandProductId"
-                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[SnoPDemandProductId]" />
-                        <inputColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplyProductId]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="SupplyProductId"
-                          externalMetadataColumnId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          lineageId="Package\CostPrice\ProdCo Cost\Excel Source.Outputs[Excel Source Output].Columns[SupplyProductId]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1560,9 +1639,15 @@
                           dataType="i4"
                           name="QtrNbr" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonth]"
-                          dataType="i4"
-                          name="PlanningMonth" />
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ItemId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductId" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
                           dataType="wstr"
@@ -1572,25 +1657,6 @@
                           refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           dataType="r8"
                           name="KeyFigureValue" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          dataType="wstr"
-                          length="100"
-                          name="ItemId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedOn]"
-                          dataType="dbTimeStamp"
-                          name="CreatedOn" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
-                          codePage="1252"
-                          dataType="str"
-                          length="25"
-                          name="CreatedBy" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\ProdCo Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          dataType="i4"
-                          name="SupplyProductId" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1639,7 +1705,7 @@
           DTS:refId="Package\CostPrice\Wafer Cost"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{30562100-14cb-4a44-9e02-0b45c928cbc1}"
+          DTS:DTSID="{6D3F7B00-5DA8-4278-BEC8-6981A397D912}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Wafer Cost"
@@ -1685,13 +1751,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">@[User::WaferCost]</property>
+                              name="Expression">48</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[User::WaferCost]</property>
+                              name="FriendlyExpression">48</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -1766,8 +1832,8 @@
                   <connections>
                     <connection
                       refId="Package\CostPrice\Wafer Cost\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1776,6 +1842,34 @@
                       refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output]"
                       name="Excel Source Output">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          name="Clean Item ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[fscl_yr_nbr]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fscl_yr_nbr]"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[fscl_yr_nbr]"
+                          name="fscl_yr_nbr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[fscl_qtr_nbr]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fscl_qtr_nbr]"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[fscl_qtr_nbr]"
+                          name="fscl_qtr_nbr"
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
                           dataType="wstr"
@@ -1796,36 +1890,51 @@
                           name="COGS per Wafer"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]"
-                          name="Year"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]"
-                          name="Qtr"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[SortUpi]"
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Lookup]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SortUpi]"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Lookup]"
                           length="255"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[SortUpi]"
-                          name="SortUpi"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Lookup]"
+                          name="Lookup"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[SORT UPI]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SORT UPI]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[SORT UPI]"
+                          name="SORT UPI"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Explanation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Explanation]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Explanation]"
+                          name="Explanation"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
+                          dataType="wstr"
+                          length="255"
+                          name="Clean Item ID" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fscl_yr_nbr]"
+                          dataType="r8"
+                          name="fscl_yr_nbr" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[fscl_qtr_nbr]"
+                          dataType="r8"
+                          name="fscl_qtr_nbr" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
                           dataType="wstr"
@@ -1833,21 +1942,23 @@
                           name="cost_grp_nm" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[COGS per Wafer]"
-                          dataType="r8"
+                          dataType="cy"
                           name="COGS per Wafer" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
-                          dataType="r8"
-                          name="Year" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Qtr]"
-                          dataType="r8"
-                          name="Qtr" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SortUpi]"
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Lookup]"
                           dataType="wstr"
                           length="255"
-                          name="SortUpi" />
+                          name="Lookup" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[SORT UPI]"
+                          dataType="wstr"
+                          length="255"
+                          name="SORT UPI" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].ExternalColumns[Explanation]"
+                          dataType="wstr"
+                          length="255"
+                          name="Explanation" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1856,15 +1967,15 @@
                       name="Excel Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fscl_yr_nbr]"
                           dataType="r8"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Year]"
-                          name="Year" />
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fscl_yr_nbr]"
+                          name="fscl_yr_nbr" />
                         <outputColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fscl_qtr_nbr]"
                           dataType="r8"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Qtr]"
-                          name="Qtr" />
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[fscl_qtr_nbr]"
+                          name="fscl_qtr_nbr" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[cost_grp_nm]"
                           dataType="wstr"
@@ -1873,15 +1984,33 @@
                           name="cost_grp_nm" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[COGS per Wafer]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[COGS per Wafer]"
                           name="COGS per Wafer" />
                         <outputColumn
-                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SortUpi]"
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SortUpi]"
-                          name="SortUpi" />
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
+                          name="Clean Item ID" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Lookup]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Lookup]"
+                          name="Lookup" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SORT UPI]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[SORT UPI]"
+                          name="SORT UPI" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Explanation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[Explanation]"
+                          name="Explanation" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1978,17 +2107,24 @@
                           externalMetadataColumnId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
                           lineageId="Package\CostPrice\Wafer Cost\Derived Column.Outputs[Derived Column Output].Columns[KeyFigureId]" />
                         <inputColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fscl_yr_nbr]"
                           cachedDataType="r8"
-                          cachedName="Year"
+                          cachedName="fscl_yr_nbr"
                           externalMetadataColumnId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YearNbr]"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Year]" />
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[fscl_yr_nbr]" />
                         <inputColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Qtr]"
+                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fscl_qtr_nbr]"
                           cachedDataType="r8"
-                          cachedName="Qtr"
+                          cachedName="fscl_qtr_nbr"
                           externalMetadataColumnId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Qtr]" />
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[fscl_qtr_nbr]" />
+                        <inputColumn
+                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Clean Item ID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Clean Item ID"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]" />
                         <inputColumn
                           refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cost_grp_nm]"
                           cachedDataType="wstr"
@@ -2002,13 +2138,6 @@
                           cachedName="COGS per Wafer"
                           externalMetadataColumnId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[COGS per Wafer]" />
-                        <inputColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SortUpi]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="SortUpi"
-                          externalMetadataColumnId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          lineageId="Package\CostPrice\Wafer Cost\Excel Source.Outputs[Excel Source Output].Columns[SortUpi]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2025,9 +2154,15 @@
                           dataType="i4"
                           name="QtrNbr" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonth]"
-                          dataType="i4"
-                          name="PlanningMonth" />
+                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ItemId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductId" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
                           dataType="wstr"
@@ -2037,25 +2172,6 @@
                           refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           dataType="r8"
                           name="KeyFigureValue" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          dataType="wstr"
-                          length="100"
-                          name="ItemId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          dataType="i4"
-                          name="SupplyProductId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedOn]"
-                          dataType="dbTimeStamp"
-                          name="CreatedOn" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Cost\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
-                          codePage="1252"
-                          dataType="str"
-                          length="25"
-                          name="CreatedBy" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2104,7 +2220,7 @@
           DTS:refId="Package\CostPrice\Wafer Price"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{f94c3dc4-a276-4b11-af56-9b5153fa4a0f}"
+          DTS:DTSID="{53D67673-8FE6-4694-B137-541DFFE9C501}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Wafer Price"
@@ -2150,13 +2266,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">@[User::WaferPrice]</property>
+                              name="Expression">39</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[User::WaferPrice]</property>
+                              name="FriendlyExpression">39</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2231,8 +2347,8 @@
                   <connections>
                     <connection
                       refId="Package\CostPrice\Wafer Price\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2242,6 +2358,16 @@
                       name="Excel Source Output">
                       <outputColumns>
                         <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]"
+                          name="Clean Item ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -2250,6 +2376,36 @@
                           length="255"
                           lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[cost_grp_nm]"
                           name="cost_grp_nm"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Lookup]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Lookup]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Lookup]"
+                          name="Lookup"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[SORT UPI]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SORT UPI]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[SORT UPI]"
+                          name="SORT UPI"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Explanation]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Explanation]"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Explanation]"
+                          name="Explanation"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Year]"
@@ -2278,24 +2434,34 @@
                           lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Wafer_Front_End]"
                           name="TMGf Rev Per Wafer_Front_End"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[SortUpi]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SortUpi]"
-                          length="255"
-                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[SortUpi]"
-                          name="SortUpi"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Clean Item ID]"
+                          dataType="wstr"
+                          length="255"
+                          name="Clean Item ID" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[cost_grp_nm]"
                           dataType="wstr"
                           length="255"
                           name="cost_grp_nm" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Lookup]"
+                          dataType="wstr"
+                          length="255"
+                          name="Lookup" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SORT UPI]"
+                          dataType="wstr"
+                          length="255"
+                          name="SORT UPI" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Explanation]"
+                          dataType="wstr"
+                          length="255"
+                          name="Explanation" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[Year]"
                           dataType="r8"
@@ -2306,13 +2472,8 @@
                           name="Qtr" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[TMGf Rev Per Wafer_Front_End]"
-                          dataType="r8"
+                          dataType="cy"
                           name="TMGf Rev Per Wafer_Front_End" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].ExternalColumns[SortUpi]"
-                          dataType="wstr"
-                          length="255"
-                          name="SortUpi" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2338,15 +2499,33 @@
                           name="cost_grp_nm" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Rev Per Wafer_Front_End]"
-                          dataType="r8"
+                          dataType="cy"
                           lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[TMGf Rev Per Wafer_Front_End]"
                           name="TMGf Rev Per Wafer_Front_End" />
                         <outputColumn
-                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[SortUpi]"
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[SortUpi]"
-                          name="SortUpi" />
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[Clean Item ID]"
+                          name="Clean Item ID" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[Lookup]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[Lookup]"
+                          name="Lookup" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[SORT UPI]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[SORT UPI]"
+                          name="SORT UPI" />
+                        <outputColumn
+                          refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[Explanation]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[Explanation]"
+                          name="Explanation" />
                         <outputColumn
                           refId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2455,6 +2634,13 @@
                           externalMetadataColumnId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QtrNbr]"
                           lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Qtr]" />
                         <inputColumn
+                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Clean Item ID]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Clean Item ID"
+                          externalMetadataColumnId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[Clean Item ID]" />
+                        <inputColumn
                           refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cost_grp_nm]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -2467,13 +2653,6 @@
                           cachedName="TMGf Rev Per Wafer_Front_End"
                           externalMetadataColumnId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[TMGf Rev Per Wafer_Front_End]" />
-                        <inputColumn
-                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SortUpi]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="SortUpi"
-                          externalMetadataColumnId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          lineageId="Package\CostPrice\Wafer Price\Excel Source.Outputs[Excel Source Output].Columns[SortUpi]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2490,9 +2669,15 @@
                           dataType="i4"
                           name="QtrNbr" />
                         <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonth]"
-                          dataType="i4"
-                          name="PlanningMonth" />
+                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ItemId" />
+                        <externalMetadataColumn
+                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="100"
+                          name="ProductId" />
                         <externalMetadataColumn
                           refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CostGroup]"
                           dataType="wstr"
@@ -2502,25 +2687,6 @@
                           refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureValue]"
                           dataType="r8"
                           name="KeyFigureValue" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ItemId]"
-                          dataType="wstr"
-                          length="100"
-                          name="ItemId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplyProductId]"
-                          dataType="i4"
-                          name="SupplyProductId" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedOn]"
-                          dataType="dbTimeStamp"
-                          name="CreatedOn" />
-                        <externalMetadataColumn
-                          refId="Package\CostPrice\Wafer Price\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
-                          codePage="1252"
-                          dataType="str"
-                          length="25"
-                          name="CreatedBy" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2570,7 +2736,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{F6322A8F-864B-4FDE-9B9C-085F2BAEDE26}"
+          DTS:DTSID="{5BF7E248-0150-4F8E-B2A9-12B11F830751}"
           DTS:From="Package\CostPrice\Execute SQL Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2578,7 +2744,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{D850E1E8-43FA-4E4E-8C16-C66650FB11E4}"
+          DTS:DTSID="{971603B4-D8A3-41F6-9394-95A5D6F00671}"
           DTS:From="Package\CostPrice\ProdCo Cost"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2586,7 +2752,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{2BA5CE37-CC55-404E-9409-10676A235341}"
+          DTS:DTSID="{6C658F81-884C-4633-AF94-BD94EE956187}"
           DTS:From="Package\CostPrice\Wafer Cost"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2594,7 +2760,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{0DEC5FAA-506C-45C6-8514-18309324077A}"
+          DTS:DTSID="{008CBC1A-DFA9-4744-88DF-B841ADFCAF90}"
           DTS:From="Package\CostPrice\Wafer Price"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -2602,19 +2768,11 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{AB3CA677-5C22-4EA3-B08F-FF525947D41D}"
+          DTS:DTSID="{A9E3AAD3-ECE5-4926-B642-E236EF9D7CE7}"
           DTS:From="Package\CostPrice\FG Price"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\CostPrice\FG Cost" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\CostPrice.PrecedenceConstraints[Constraint 5]"
-          DTS:CreationName=""
-          DTS:DTSID="{6447AAB8-ACDF-47E0-A053-84876CAB701E}"
-          DTS:From="Package\CostPrice\Get Key Figures IDs"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 5"
-          DTS:To="Package\CostPrice\Execute SQL Task" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -2633,45 +2791,41 @@
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\CostPrice\Execute SQL Task"
-          TopLeft="126.057149036563,107.509806177333" />
+          TopLeft="43.9142904948216,28.7647073516384" />
         <NodeLayout
           Size="115.2,41.6"
           Id="Package\CostPrice\FG Cost"
-          TopLeft="146.363271831354,517.541742812871" />
+          TopLeft="64.2204132896125,438.796643987176" />
         <NodeLayout
           Size="116.8,41.6"
           Id="Package\CostPrice\FG Price"
-          TopLeft="145.342863650711,430.550145867795" />
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\CostPrice\Get Key Figures IDs"
-          TopLeft="126.295244278713,32.4941196847539" />
+          TopLeft="63.2000051089694,351.8050470421" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\CostPrice\ProdCo Cost"
-          TopLeft="136.771434933312,189.23921960437" />
+          TopLeft="54.6285763915706,110.494120778675" />
         <NodeLayout
           Size="130.4,41.6"
           Id="Package\CostPrice\Wafer Cost"
-          TopLeft="138.914292112662,267.568631390525" />
+          TopLeft="56.7714335709204,188.82353256483" />
         <NodeLayout
           Size="132.8,41.6"
           Id="Package\CostPrice\Wafer Price"
-          TopLeft="137.689802295891,341.704766480128" />
+          TopLeft="55.5469437541491,262.959667654433" />
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint]"
-          TopLeft="206.014291984938,149.109806177333">
+          TopLeft="123.871433443196,70.3647073516384">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.1294134270366"
+              EndConnector="0,40.1294134270362"
               Start="0,0"
-              End="0,32.6294134270366">
+              End="0,32.6294134270362">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.6294134270366" />
+                    End="0,32.6294134270362" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2682,7 +2836,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 1]"
-          TopLeft="204.442863522987,230.83921960437">
+          TopLeft="122.300004981245,152.094120778675">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2704,18 +2858,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 2]"
-          TopLeft="204.102047204277,309.168631390525">
+          TopLeft="121.959188662535,230.42353256483">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.5361350896035"
+              EndConnector="0,32.5361350896036"
               Start="0,0"
-              End="0,25.0361350896035">
+              End="0,25.0361350896036">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.0361350896035" />
+                    End="0,25.0361350896036" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2726,7 +2880,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 3]"
-          TopLeft="203.916332973301,383.304766480128">
+          TopLeft="121.773474431559,304.559667654433">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2748,40 +2902,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 4]"
-          TopLeft="203.853067741033,472.150145867795">
+          TopLeft="121.710209199291,393.4050470421">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.3915969450757"
+              EndConnector="0,45.3915969450756"
               Start="0,0"
-              End="0,37.8915969450757">
+              End="0,37.8915969450756">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.8915969450757" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CostPrice.PrecedenceConstraints[Constraint 5]"
-          TopLeft="209.776196657638,74.0941196847539">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.415686492579"
-              Start="0,0"
-              End="0,25.915686492579">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.915686492579" />
+                    End="0,37.8915969450756" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2793,8 +2925,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="425.6,674.4"
-          Size="425.6,717.6"
+          PanelSize="301.6,535.2"
+          Size="301.6,578.4"
           Id="Package\CostPrice"
           TopLeft="237.142861181376,69.5882362700664" />
       </GraphLayout>
@@ -2806,6 +2938,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\CostPrice\FG Cost\OLE DB Destination"
+          TopLeft="331,247" />
+        <NodeLayout
           Size="138.4,41.6"
           Id="Package\CostPrice\FG Cost\Excel Source"
           TopLeft="351.428577413365,82.5882364523865" />
@@ -2813,10 +2949,6 @@
           Size="152.8,41.6"
           Id="Package\CostPrice\FG Cost\Derived Column"
           TopLeft="346.428577328215,158.294119867074" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\CostPrice\FG Cost\OLE DB Destination"
-          TopLeft="334,238" />
         <EdgeLayout
           Id="Package\CostPrice\FG Cost.Paths[Excel Source Output]"
           TopLeft="421.72857737079,124.188236452386">
@@ -2841,18 +2973,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice\FG Cost.Paths[Derived Column Output]"
-          TopLeft="421.014288664108,199.894119867074">
+          TopLeft="419.514288664108,199.894119867074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.105880132926"
+              EndConnector="0,47.1058801329261"
               Start="0,0"
-              End="0,30.605880132926">
+              End="0,39.6058801329261">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.605880132926" />
+                    End="0,39.6058801329261" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2865,7 +2997,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\CostPrice\FG Cost\Excel Source">
+    design-time-name="Package\CostPrice\FG Cost\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2878,7 +3010,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\CostPrice\FG Cost\OLE DB Destination">
+    design-time-name="Package\CostPrice\FG Cost\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2898,7 +3030,7 @@
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\CostPrice\FG Price\Excel Source"
-          TopLeft="352.428577413365,82.5882364523865" />
+          TopLeft="351.428577413365,82.5882364523865" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\CostPrice\FG Price\Derived Column"
@@ -2906,21 +3038,21 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\CostPrice\FG Price\OLE DB Destination"
-          TopLeft="344,240" />
+          TopLeft="338,251" />
         <EdgeLayout
           Id="Package\CostPrice\FG Price.Paths[Excel Source Output]"
-          TopLeft="422.22857737079,124.188236452386">
+          TopLeft="421.72857737079,124.188236452386">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.1058834146875"
+              EndConnector="0,34.1058834146876"
               Start="0,0"
-              End="0,26.6058834146875">
+              End="0,26.6058834146876">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6058834146875" />
+                    End="0,26.6058834146876" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2931,18 +3063,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice\FG Price.Paths[Derived Column Output]"
-          TopLeft="426.014288664108,199.894119867074">
+          TopLeft="423.014288664108,199.894119867074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.105880132926"
+              EndConnector="0,51.1058801329261"
               Start="0,0"
-              End="0,32.605880132926">
+              End="0,43.6058801329261">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.605880132926" />
+                    End="0,43.6058801329261" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2988,29 +3120,29 @@
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\CostPrice\ProdCo Cost\Excel Source"
-          TopLeft="351.428577413365,95.5882364523865" />
+          TopLeft="351.428577413365,82.5882364523865" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\CostPrice\ProdCo Cost\Derived Column"
-          TopLeft="343.428577328215,188.294119867074" />
+          TopLeft="346.428577328215,158.294119867074" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\CostPrice\ProdCo Cost\OLE DB Destination"
-          TopLeft="328,277" />
+          TopLeft="341.428577243066,240.694120596354" />
         <EdgeLayout
           Id="Package\CostPrice\ProdCo Cost.Paths[Excel Source Output]"
-          TopLeft="420.22857737079,137.188236452386">
+          TopLeft="421.72857737079,124.188236452386">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.1058834146875"
+              EndConnector="0,34.1058834146876"
               Start="0,0"
-              End="0,43.6058834146875">
+              End="0,26.6058834146876">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.6058834146875" />
+                    End="0,26.6058834146876" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3021,18 +3153,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice\ProdCo Cost.Paths[Derived Column Output]"
-          TopLeft="416.514288664108,229.894119867074">
+          TopLeft="424.72857728564,199.894119867074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.105880132926"
+              EndConnector="0,40.8000007292804"
               Start="0,0"
-              End="0,39.605880132926">
+              End="0,33.3000007292804">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.605880132926" />
+                    End="0,33.3000007292804" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3076,13 +3208,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\CostPrice\Wafer Cost\OLE DB Destination"
+          TopLeft="338,242" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\CostPrice\Wafer Cost\Excel Source"
+          TopLeft="351.428577413365,82.5882364523865" />
+        <NodeLayout
           Size="152.8,41.6"
           Id="Package\CostPrice\Wafer Cost\Derived Column"
           TopLeft="346.428577328215,158.294119867074" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\CostPrice\Wafer Cost\OLE DB Destination"
-          TopLeft="344.285720148865,237.058826854072" />
         <EdgeLayout
           Id="Package\CostPrice\Wafer Cost.Paths[Excel Source Output]"
           TopLeft="421.72857737079,124.188236452386">
@@ -3107,18 +3243,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice\Wafer Cost.Paths[Derived Column Output]"
-          TopLeft="426.15714873854,199.894119867074">
+          TopLeft="423.014288664108,199.894119867074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.1647069869982"
+              EndConnector="0,42.105880132926"
               Start="0,0"
-              End="0,29.6647069869982">
+              End="0,34.605880132926">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.6647069869982" />
+                    End="0,34.605880132926" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3127,15 +3263,11 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\CostPrice\Wafer Cost\Excel Source"
-          TopLeft="351.428577413365,82.5882364523865" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\CostPrice\Wafer Cost\Excel Source">
+    design-time-name="Package\CostPrice\Wafer Cost\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3148,7 +3280,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\CostPrice\Wafer Cost\OLE DB Destination">
+    design-time-name="Package\CostPrice\Wafer Cost\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3166,6 +3298,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\CostPrice\Wafer Price\OLE DB Destination"
+          TopLeft="342,237" />
+        <NodeLayout
           Size="138.4,41.6"
           Id="Package\CostPrice\Wafer Price\Excel Source"
           TopLeft="351.428577413365,82.5882364523865" />
@@ -3173,10 +3309,6 @@
           Size="152.8,41.6"
           Id="Package\CostPrice\Wafer Price\Derived Column"
           TopLeft="346.428577328215,158.294119867074" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\CostPrice\Wafer Price\OLE DB Destination"
-          TopLeft="338,240" />
         <EdgeLayout
           Id="Package\CostPrice\Wafer Price.Paths[Excel Source Output]"
           TopLeft="421.72857737079,124.188236452386">
@@ -3201,18 +3333,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CostPrice\Wafer Price.Paths[Derived Column Output]"
-          TopLeft="423.014288664108,199.894119867074">
+          TopLeft="425.014288664108,199.894119867074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.1058801329261"
+              EndConnector="0,37.105880132926"
               Start="0,0"
-              End="0,32.6058801329261">
+              End="0,29.605880132926">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.6058801329261" />
+                    End="0,29.605880132926" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3225,7 +3357,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\CostPrice\Wafer Price\Excel Source">
+    design-time-name="Package\CostPrice\Wafer Price\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3238,7 +3370,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\CostPrice\Wafer Price\OLE DB Destination">
+    design-time-name="Package\CostPrice\Wafer Price\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
