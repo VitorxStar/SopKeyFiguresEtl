@@ -6,3 +6,8 @@ obj/Development/MasterLoader 1.dtsx
 obj/Development/SopKeyFiguresEtl.dtproj
 obj/Development/SopKeyFiguresEtl.dtproj
 obj/Development/SopKeyFiguresEtl.dtproj
+obj/Development/BuildLog.xml
+obj/Development/MasterLoader.dtsx
+obj/Development/MasterLoaderOld.dtsx
+obj/Development/Package.dtsx
+obj/Development/SopKeyFiguresEtl.dtproj
