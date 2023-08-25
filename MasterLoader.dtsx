@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterLoader"
   DTS:PackageType="5"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{484EB22D-3E29-4FDF-B0C3-FE65EEB523FE}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{5E2294EA-45CD-4DC2-A4BC-CD39995C97B7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jcsolano\Downloads\Products with missing Wafer Price.2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jcsolano\Downloads\Products with missing Wafer Cost.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jcsolano\Downloads\8.21_SPOR Upload C.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\jcsolano\Downloads\8.23_SPOR Upload D.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -132,6 +132,7 @@
           DTS:refId="Package\CostPrice\FG Cost"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{C936BBE2-9341-4FCC-AD66-2FCF311D9AAB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -625,6 +626,7 @@
           DTS:refId="Package\CostPrice\FG Price"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{D058EF1D-F461-4697-B1B1-744E86ACC00F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -1169,6 +1171,7 @@
           DTS:refId="Package\CostPrice\ProdCo Cost"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{2FD60B2D-EE72-446E-BA86-EECAE1FFCE92}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -1693,7 +1696,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{631FCBE8-E4B5-460C-ADDD-7B9244B0F7AB}"
-              SQLTask:SqlStatementSource="EXEC [sop].[UspLoadSPOR];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="EXEC [sop].[UspLoadCostPrice];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2165,6 +2168,7 @@
           DTS:refId="Package\CostPrice\Wafer Price"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{20BDF271-A254-4AD7-85CC-4C76A0E7B324}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -2698,6 +2702,7 @@
       DTS:refId="Package\SPOR"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{995784A7-DF59-4985-84AD-2737B4D1B8AB}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -3247,9 +3252,17 @@
           Id="Package\CostPrice\Get Key Figures IDs"
           TopLeft="126.295244278713,32.4941196847539" />
         <NodeLayout
+          Size="148,41.6"
+          Id="Package\CostPrice\PlanningFigure"
+          TopLeft="129.828576391571,661.67059915305" />
+        <NodeLayout
           Size="136,41.6"
           Id="Package\CostPrice\ProdCo Cost"
           TopLeft="136.771434933312,189.23921960437" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\CostPrice\UspLoadCostPrice"
+          TopLeft="121.342861947722,589.788245203751" />
         <NodeLayout
           Size="130.4,41.6"
           Id="Package\CostPrice\Wafer Cost"
@@ -3390,10 +3403,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\CostPrice\UspLoadCostPrice"
-          TopLeft="121.342861947722,589.788245203751" />
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 6]"
           TopLeft="203.053066889538,558.377036919793">
@@ -3416,10 +3425,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\CostPrice\PlanningFigure"
-          TopLeft="129.828576391571,661.67059915305" />
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 7]"
           TopLeft="202.985719169646,631.388245203751">
@@ -3545,7 +3550,7 @@
     design-time-name="Package\CostPrice\FG Cost">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\CostPrice\FG Cost\Excel Source"
@@ -3577,7 +3582,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3599,7 +3606,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
