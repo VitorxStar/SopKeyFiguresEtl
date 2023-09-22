@@ -2,18 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SopKeyFiguresEtl</Name>
-    <LastWriteTime>2023-07-28T20:23:42.2285494Z</LastWriteTime>
+    <LastWriteTime>2023-09-22T19:13:44.9843836Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>MasterLoader.dtsx</Name>
-      <LastWriteTime>2023-07-28T20:23:38.8450033Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>MasterLoaderOld.dtsx</Name>
-      <LastWriteTime>2023-07-28T15:53:35.6773858Z</LastWriteTime>
+      <LastWriteTime>2023-09-22T19:29:38.7813629Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

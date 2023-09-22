@@ -7,12 +7,12 @@
   DTS:CreatorName="AMR\jcsolano"
   DTS:DTSID="{0196FA11-7CD5-4651-B5A5-A90B8B9FD858}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="MasterLoader"
   DTS:PackageType="5"
-  DTS:VersionBuild="92"
-  DTS:VersionGUID="{66CD3866-61CC-482B-89CE-1D374EF91C1E}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{615DE1E2-B484-4092-8A73-2C67437B8AAA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,6 +41,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sql2941-fm1-in.amr.corp.intel.com,3181.IAO_Sandbox_EOLWW50]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{751E3971-0788-4DEE-9A28-568FBB68AFCF}"
+      DTS:ObjectName="sql2941-fm1-in.amr.corp.intel.com,3181.IAO_Sandbox_EOLWW50">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=sql2941-fm1-in.amr.corp.intel.com,3181;Initial Catalog=IAO_Sandbox_EOLWW50;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-MasterLoader-{751E3971-0788-4DEE-9A28-568FBB68AFCF}sql2941-fm1-in.amr.corp.intel.com,3181.IAO_Sandbox_EOLWW50;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[svddev.intel.com,3181.SVD]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{631FCBE8-E4B5-460C-ADDD-7B9244B0F7AB}"
@@ -50,6 +62,18 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=svddev.intel.com,3181;Initial Catalog=SVD;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TMGFBeData Excel Connection]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{08866C7A-B5B8-4BB8-AFBD-E89C6C1C73A6}"
+      DTS:ObjectName="TMGFBeData Excel Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\vitorsix\Downloads\sample file to upload for KF 891 91 94 95.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -129,7 +153,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -251,7 +275,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -448,7 +472,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -745,7 +769,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -942,7 +966,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1134,7 +1158,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Key Figures IDs"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1168,7 +1192,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="PlanningFigure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1290,7 +1314,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1508,7 +1532,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1700,7 +1724,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="UspLoadCostPrice"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1717,7 +1741,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="UspLoadCostPricePlanningMonth"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1845,7 +1869,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2021,7 +2045,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2311,7 +2335,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2487,7 +2511,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2824,7 +2848,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3042,7 +3066,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3263,6 +3287,570 @@
           DTS:To="Package\SPOR\PlanningFigure" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TMGFBeData"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="TMGFBeData"
+      DTS:DTSID="{6BA0E182-2EAC-43DF-BB25-6EE4755E3557}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TMGFBeData">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\TMGFBeData\Create Table TMGFBeData"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9FB177A4-1240-4450-88E7-6CAB10FC794D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create Table TMGFBeData"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{751E3971-0788-4DEE-9A28-568FBB68AFCF}"
+              SQLTask:SqlStatementSource="DROP TABLE IF EXISTS [sop].[StgTMGFBeData]&#xA;&#xA;CREATE TABLE [sop].[StgTMGFBeData](&#xA;&#x9;[PlanningMonthNbr] [int]  NULL,&#xA;&#x9;[PlanVersionId] [int] NULL,&#xA;&#x9;[CorridorId] [int]  NULL,&#xA;&#x9;[ProductId] [int]  NULL,&#xA;&#x9;[ProfitCenterCd] [int]  NULL,&#xA;&#x9;[CustomerId] [int]  NULL,&#xA;&#x9;[KeyFigureId] [int]  NULL,&#xA;&#x9;[TimePeriodId] [int]  NULL,&#xA;&#x9;[Quantity] [decimal](38, 10) NULL,&#xA;&#x9;[CreatedOnDtm] [datetime]  NULL DEFAULT GETDATE(),&#xA;&#x9;[CreatedByNm] [varchar](25)  NULL DEFAULT ORIGINAL_LOGIN(),&#xA;&#x9;[ModifiedOnDtm] [datetime]  NULL DEFAULT GETDATE(),&#xA;&#x9;[ModifiedByNm] [varchar](25)  NULL DEFAULT ORIGINAL_LOGIN(),&#xA;)&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TMGFBeData\PlanningFigure - 7"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ED61EF08-7CAD-4F75-876E-7DF93E23154D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="PlanningFigure - 7"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{751E3971-0788-4DEE-9A28-568FBB68AFCF}"
+              SQLTask:SqlStatementSource="exec [sop].[UspLoadPlanningFigure] 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\TMGFBeData\TMGFBeData"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C6566634-2A8F-4242-AF5A-361A6C84D82A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TMGFBeData"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\TMGFBeData\TMGFBeData\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Sheet1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\TMGFBeData\TMGFBeData\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TMGFBeData Excel Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[TMGFBeData Excel Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[PlanningMonthNbr]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[PlanningMonthNbr]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[PlanningMonthNbr]"
+                          name="PlanningMonthNbr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[PlanVersionId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[PlanVersionId]"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[PlanVersionId]"
+                          name="PlanVersionId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[CorridorId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[CorridorId]"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[CorridorId]"
+                          name="CorridorId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[ProductId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductId]"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[ProductId]"
+                          name="ProductId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[ProfitCenterCd]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProfitCenterCd]"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[ProfitCenterCd]"
+                          name="ProfitCenterCd"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[CustomerId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[CustomerId]"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[CustomerId]"
+                          name="CustomerId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[KeyFigureId]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[KeyFigureId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[KeyFigureId]"
+                          name="KeyFigureId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[TimePeriodId]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[TimePeriodId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[TimePeriodId]"
+                          name="TimePeriodId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[Quantity]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[Quantity]"
+                          name="Quantity"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[PlanningMonthNbr]"
+                          dataType="r8"
+                          name="PlanningMonthNbr" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[PlanVersionId]"
+                          dataType="wstr"
+                          length="255"
+                          name="PlanVersionId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[CorridorId]"
+                          dataType="wstr"
+                          length="255"
+                          name="CorridorId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[ProfitCenterCd]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProfitCenterCd" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[CustomerId]"
+                          dataType="wstr"
+                          length="255"
+                          name="CustomerId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[KeyFigureId]"
+                          dataType="r8"
+                          name="KeyFigureId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[TimePeriodId]"
+                          dataType="r8"
+                          name="TimePeriodId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
+                          dataType="r8"
+                          name="Quantity" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[PlanningMonthNbr]"
+                          dataType="r8"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[PlanningMonthNbr]"
+                          name="PlanningMonthNbr" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[PlanVersionId]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[PlanVersionId]"
+                          name="PlanVersionId" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[CorridorId]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[CorridorId]"
+                          name="CorridorId" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ProductId]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ProductId]"
+                          name="ProductId" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ProfitCenterCd]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ProfitCenterCd]"
+                          name="ProfitCenterCd" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[CustomerId]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[CustomerId]"
+                          name="CustomerId" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[KeyFigureId]"
+                          dataType="r8"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[KeyFigureId]"
+                          name="KeyFigureId" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[TimePeriodId]"
+                          dataType="r8"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[TimePeriodId]"
+                          name="TimePeriodId" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[Quantity]"
+                          dataType="r8"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[Quantity]"
+                          name="Quantity" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[sop].[StgTMGFBeData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[sql2941-fm1-in.amr.corp.intel.com,3181.IAO_Sandbox_EOLWW50]"
+                      connectionManagerRefId="Package.ConnectionManagers[sql2941-fm1-in.amr.corp.intel.com,3181.IAO_Sandbox_EOLWW50]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PlanningMonthNbr]"
+                          cachedDataType="r8"
+                          cachedName="PlanningMonthNbr"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonthNbr]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[PlanningMonthNbr]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PlanVersionId]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="PlanVersionId"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanVersionId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[PlanVersionId]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CorridorId]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CorridorId"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorridorId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[CorridorId]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductId]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProductId"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[ProductId]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProfitCenterCd]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="ProfitCenterCd"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfitCenterCd]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[ProfitCenterCd]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerId]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CustomerId"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[CustomerId]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KeyFigureId]"
+                          cachedDataType="r8"
+                          cachedName="KeyFigureId"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[KeyFigureId]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TimePeriodId]"
+                          cachedDataType="r8"
+                          cachedName="TimePeriodId"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimePeriodId]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[TimePeriodId]" />
+                        <inputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                          cachedDataType="r8"
+                          cachedName="Quantity"
+                          externalMetadataColumnId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                          lineageId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output].Columns[Quantity]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningMonthNbr]"
+                          dataType="i4"
+                          name="PlanningMonthNbr" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanVersionId]"
+                          dataType="i4"
+                          name="PlanVersionId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorridorId]"
+                          dataType="i4"
+                          name="CorridorId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          dataType="i4"
+                          name="ProductId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProfitCenterCd]"
+                          dataType="i4"
+                          name="ProfitCenterCd" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                          dataType="i4"
+                          name="CustomerId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KeyFigureId]"
+                          dataType="i4"
+                          name="KeyFigureId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimePeriodId]"
+                          dataType="i4"
+                          name="TimePeriodId" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                          dataType="numeric"
+                          name="Quantity"
+                          precision="38"
+                          scale="10" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedOnDtm]"
+                          dataType="dbTimeStamp"
+                          name="CreatedOnDtm" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedByNm]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="CreatedByNm" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedOnDtm]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedOnDtm" />
+                        <externalMetadataColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByNm]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="ModifiedByNm" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\TMGFBeData\TMGFBeData.Paths[Excel Source Output]"
+                  endId="Package\TMGFBeData\TMGFBeData\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\TMGFBeData\TMGFBeData\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TMGFBeData.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D71C18CE-412B-483A-A4C5-965C7AF65EF6}"
+          DTS:From="Package\TMGFBeData\Create Table TMGFBeData"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\TMGFBeData\TMGFBeData" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\TMGFBeData.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{3C9AA563-E6DA-4F2B-A94C-50C990C767F7}"
+          DTS:From="Package\TMGFBeData\TMGFBeData"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\TMGFBeData\PlanningFigure - 7" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3275,41 +3863,45 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\CostPrice\Execute SQL Task"
           TopLeft="126.057149036563,107.509806177333" />
         <NodeLayout
-          Size="115.2,41.6"
+          Size="115,42"
           Id="Package\CostPrice\FG Cost"
           TopLeft="146.363271831354,516.777036919793" />
         <NodeLayout
-          Size="116.8,41.6"
+          Size="117,42"
           Id="Package\CostPrice\FG Price"
           TopLeft="145.342863650711,430.550145867795" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,42"
           Id="Package\CostPrice\Get Key Figures IDs"
           TopLeft="126.295244278713,32.4941196847539" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\CostPrice\PlanningFigure"
           TopLeft="125.542862032871,768.729424183921" />
         <NodeLayout
-          Size="136,41.6"
+          Size="136,42"
           Id="Package\CostPrice\ProdCo Cost"
           TopLeft="136.771434933312,189.23921960437" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\CostPrice\UspLoadCostPrice"
           TopLeft="121.342861947722,589.788245203751" />
         <NodeLayout
-          Size="130.4,41.6"
+          Size="231,42"
+          Id="Package\CostPrice\UspLoadCostPricePlanningMonth"
+          TopLeft="83.4857184458759,677.623539128353" />
+        <NodeLayout
+          Size="130,42"
           Id="Package\CostPrice\Wafer Cost"
           TopLeft="138.914292112662,267.568631390525" />
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\CostPrice\Wafer Price"
           TopLeft="137.689802295891,341.704766480128" />
         <EdgeLayout
@@ -3466,10 +4058,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="231.2,41.6"
-          Id="Package\CostPrice\UspLoadCostPricePlanningMonth"
-          TopLeft="83.4857184458759,677.623539128353" />
         <EdgeLayout
           Id="Package\CostPrice.PrecedenceConstraints[Constraint 7]"
           TopLeft="200.614290196799,631.388245203751">
@@ -3517,24 +4105,24 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="425.6,909.6"
-          Size="425.6,952.8"
+          PanelSize="426,910"
+          Size="426,953"
           Id="Package\CostPrice"
           TopLeft="161.666669419834,73.4705892469918" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\SPOR\PlanningFigure"
           TopLeft="137.355115456206,369.105888128964" />
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\SPOR\Purge Table"
           TopLeft="141.363271746204,108.602243167444" />
         <NodeLayout
-          Size="104,41.6"
+          Size="104,42"
           Id="Package\SPOR\SPOR"
           TopLeft="156.77143527391,189.23921960437" />
         <NodeLayout
-          Size="144.8,41.6"
+          Size="145,42"
           Id="Package\SPOR\UspLoadSPOR"
           TopLeft="135.314299094921,279.173113870644" />
         <EdgeLayout
@@ -3606,10 +4194,73 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="425.6,674.4"
-          Size="425.6,717.6"
+          PanelSize="426,675"
+          Size="426,718"
           Id="Package\SPOR"
           TopLeft="651.428582522334,78.5098047795454" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\TMGFBeData\Create Table TMGFBeData"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\TMGFBeData\TMGFBeData"
+          TopLeft="37,107.5" />
+        <EdgeLayout
+          Id="Package\TMGFBeData.PrecedenceConstraints[Constraint]"
+          TopLeft="107,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\TMGFBeData\PlanningFigure - 7"
+          TopLeft="24.5,209.5" />
+        <EdgeLayout
+          Id="Package\TMGFBeData.PrecedenceConstraints[Constraint 1]"
+          TopLeft="107,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="214,306"
+          Size="214,350"
+          Id="Package\TMGFBeData"
+          TopLeft="1155.55555555556,85.5555555555555" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3899,17 +4550,17 @@
     design-time-name="Package\CostPrice\Wafer Cost">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
+          Size="138,42"
           Id="Package\CostPrice\Wafer Cost\Excel Source"
           TopLeft="351.428577413365,82.5882364523865" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\CostPrice\Wafer Cost\Derived Column"
           TopLeft="346.428577328215,158.294119867074" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\CostPrice\Wafer Cost\OLE DB Destination"
           TopLeft="344.285720148865,237.058826854072" />
         <EdgeLayout
@@ -3931,9 +4582,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3955,9 +4604,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4138,6 +4785,82 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SPOR\SPOR\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\TMGFBeData\TMGFBeData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\TMGFBeData\TMGFBeData\Excel Source"
+          TopLeft="373,29" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\TMGFBeData\TMGFBeData\OLE DB Destination"
+          TopLeft="425,186" />
+        <EdgeLayout
+          Id="Package\TMGFBeData\TMGFBeData.Paths[Excel Source Output]"
+          TopLeft="442.5,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,115"
+              Start="0,0"
+              End="68,107.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.5"
+                    Point2="0,57.5"
+                    Point3="4,57.5" />
+                  <mssgle:LineSegment
+                    End="64,57.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,57.5"
+                    Point2="68,57.5"
+                    Point3="68,61.5" />
+                  <mssgle:LineSegment
+                    End="68,107.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TMGFBeData\TMGFBeData\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TMGFBeData\TMGFBeData\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
